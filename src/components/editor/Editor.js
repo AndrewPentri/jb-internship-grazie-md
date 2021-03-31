@@ -3,14 +3,16 @@
 * */
 
 import React from 'react';
+import './styles.scss';
+
 import ReactCodemirror from "@uiw/react-codemirror";
 
 const Editor = function () {
     return (
-        <ReactCodemirror
-            width={'50%'}
-            height={'100vh'}
-        />
+        <div className={'md-editor'}>
+            <ReactCodemirror/>
+        </div>
+
     )
 }
 
