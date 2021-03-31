@@ -6,11 +6,17 @@ import React from 'react';
 import './styles.scss';
 
 import ReactCodemirror from "@uiw/react-codemirror";
+import { useEditor } from "../EditorContext";
 
 const Editor = function () {
+    const { editorValue, editorChangeHandler } = useEditor();
+
     return (
         <div className={'md-editor'}>
-            <ReactCodemirror/>
+            <ReactCodemirror
+                value={ editorValue }
+                onChange={ editorChangeHandler }
+            />
         </div>
 
     )
