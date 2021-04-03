@@ -16,9 +16,11 @@ const Editor = function () {
             <ReactCodemirror
                 value={ editorValue }
                 onChange={ editorChangeHandler }
+                options={ {
+                    mode: 'Markdown'
+                }}
             />
         </div>
-
     )
 }
 

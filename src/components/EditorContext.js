@@ -3,7 +3,7 @@
 * */
 import React, { useContext, useState } from 'react';
 
-const EditorContext = React.createContext('');
+const EditorContext = React.createContext( '' );
 
 export const useEditor = () => {
     return useContext( EditorContext );
@@ -12,9 +12,7 @@ export const useEditor = () => {
 export const EditorContextProvider = ( { children} ) => {
     const [ editorValue, setEditorValue ] = useState( '' );
 
-    const editorChangeHandler = editorCmp => {
-        setEditorValue( editorCmp.getValue() );
-    }
+    const editorChangeHandler = codeMirror => setEditorValue( codeMirror.getValue() );
 
     return (
         <EditorContext.Provider
@@ -23,3 +21,5 @@ export const EditorContextProvider = ( { children} ) => {
         </EditorContext.Provider>
     )
 }
+
+

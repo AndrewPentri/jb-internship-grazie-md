@@ -10,8 +10,10 @@ const Preview = function () {
     const { editorValue } = useEditor();
 
     return (
-        <div className={'preview'}
-             dangerouslySetInnerHTML={ { __html: Converter.makeHtml( editorValue ) } } >
+        <div className={ 'preview' }>
+            <div className={ 'preview-content' }
+                 dangerouslySetInnerHTML={ { __html: Converter.makeHtml( editorValue ) } }>
+            </div>
         </div>
     )
 }

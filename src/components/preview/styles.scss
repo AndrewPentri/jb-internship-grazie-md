@@ -1,8 +1,42 @@
+$base-highlight: #fafafa;
+$table-border-rule: 1px solid lightgray;
+
+
 .preview {
   height: inherit;
   overflow: auto;
   width: 50%;
-  background: #fafafa;
+  outline: 4px solid $base-highlight;
   display: inline-block;
-  font-family: 'source-code-pro', Menlo, 'Courier New', Consolas, monospace;;
+  font-family: 'source-code-pro', Menlo, 'Courier New', Consolas, monospace;
+
+  .preview-content {
+    padding: 0 20px;
+  }
+
+  code {
+    border-radius: 4px;
+    background: $base-highlight;
+
+  }
+
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    tr {
+      &:nth-child(odd) {
+        background: inherit;
+      }
+      &:nth-child(even) {
+        background: $base-highlight;
+      }
+    }
+    th {
+      background: $base-highlight;
+    }
+    td, th {
+      border: $table-border-rule;
+      margin: 0;
+    }
+  }
 }
