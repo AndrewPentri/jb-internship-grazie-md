@@ -7,16 +7,22 @@ import './styles.scss';
 
 import ReactCodemirror from "@uiw/react-codemirror";
 import { useEditor } from "../EditorContext";
+import WritingStopwatcher from "./WritingStopwatcher";
 
 const Editor = function () {
     const { editorValue, editorChangeHandler } = useEditor();
 
+    const onReactCodemirrorChange = codeMirror => {
+        WritingStopwatcher.clear();
+        WritingStopwatcher.setTimeout( () => editorChangeHandler( codeMirror ) );
+    }
+
     return (
-        <div className={'md-editor'}>
+        <div className={ 'md-editor' }>
             <ReactCodemirror
                 value={ editorValue }
-                onChange={ editorChangeHandler }
-                options={ {
+                onChange={ onReactCodemirrorChange }
+                options={{
                     mode: 'Markdown'
                 }}
             />
