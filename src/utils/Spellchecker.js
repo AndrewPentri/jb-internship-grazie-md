@@ -1,3 +1,7 @@
+/**
+* Module exports an util which checks orthography of whole editor's text.
+* */
+
 import { dictionaryEn } from "../common/dictionaries/Dictionaries";
 
 const markers = [];
@@ -7,8 +11,7 @@ const Spellcheck = codeMirror => {
 
     codeMirror.eachLine( line => {
         let text = line.text;
-            const
-            lineNumber = codeMirror.getLineNumber( line ),
+        const lineNumber = codeMirror.getLineNumber( line ),
             cmDoc = codeMirror.getDoc(),
             wordRegexp = /^([0-9]|[a-z])+([0-9a-z]+)$/i,
             words = text.split(/[\s,.\n;:\\/()\[\]{}?!<>#$=+\-_%@*^]/).filter( item => wordRegexp.test( item ) );
@@ -29,8 +32,6 @@ const Spellcheck = codeMirror => {
 
             text = text.replace( word, ''.padEnd( word.length, '0' ) );
         })
-
-
     })
 }
 
