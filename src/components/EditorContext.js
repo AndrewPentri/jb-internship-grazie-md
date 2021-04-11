@@ -12,10 +12,8 @@ export const useEditor = () => {
 export const EditorContextProvider = ( { children} ) => {
     const [ editorValue, setEditorValue ] = useState( '' );
 
-    const editorChangeHandler = codeMirror => setEditorValue( codeMirror.getValue() );
-
     return (
-        <EditorContext.Provider value = { { editorValue, editorChangeHandler } }>
+        <EditorContext.Provider value = { { editorValue, setEditorValue } }>
             { children }
         </EditorContext.Provider>
     )
