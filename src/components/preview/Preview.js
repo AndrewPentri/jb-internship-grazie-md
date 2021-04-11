@@ -4,7 +4,7 @@
 import React from 'react';
 import './styles.scss'
 import { useEditor } from "../EditorContext";
-import Converter from "../common/converter/Converter";
+import Converter from "../../utils/Converter";
 
 const Preview = function () {
     const { editorValue } = useEditor();
