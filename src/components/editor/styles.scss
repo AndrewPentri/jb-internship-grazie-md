@@ -3,3 +3,10 @@
   height: inherit;
   display: inline-block;
 }
+
+.cm-error {
+  background: lightcoral;
+  color: whitesmoke!important;
+  padding: 0 2px;
+  border-radius: 4px;
+}

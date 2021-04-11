@@ -41,6 +41,17 @@ module.exports = {
             {
                 test: /\.(scss|css)$/,
                 use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+            },
+            {
+                test: /\.(aff|dic)$/i,
+                use: [
+                    {
+                        loader: 'raw-loader',
+                        options: {
+                            esModule: false,
+                        },
+                    },
+                ],
             }
         ]
     },
