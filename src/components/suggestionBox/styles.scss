@@ -1,0 +1,15 @@
+.suggestion-box {
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  position: absolute;
+  border: 1px solid dimgray;
+  background: white;
+  color: lightslategray;
+  .suggestion-item {
+    padding: 4px;
+    cursor: pointer;
+    &:hover{
+      background: #cdcdcd;
+    }
+  }
+}
